@@ -150,7 +150,10 @@
         document.write("<tr>");
         for(var j=0; j<8; j++)
         {
-            document.write("<td>"+j+"</td>");
+            if((i+j)%2 == 0)
+                document.write("<td>"+j+"</td>");
+            else
+                document.write("<td bgcolor='black'>"+j+"</td>");
         }
         document.write("</tr>");
     }
