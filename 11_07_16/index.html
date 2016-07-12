@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>JS_110716</title>
+    <noscript>Error js</noscript>
+
+    <link href="css/style.css" rel="stylesheet" />
+    
+</head>
+<body>
+    <script>
+        //alert("Hello");
+        //window.alert("Hello");
+
+        //document.write("world");
+        //window.document.write("world");
+
+        //for (var i in window) {
+        //    document.writeln(i + "<br/>");
+        //}
+
+
+        //var x = 0;
+        //var y = 0;
+        //while ((x = parseInt(prompt("Go go", "2"))) != 0) {
+        //    y += x;      
+        //}
+        //document.write(y);
+
+
+        //try {
+        //    y = 1 / 'r';
+        //}
+        //catch (e) {
+        //    alert("e.Name");
+        //}
+        //finally
+        //{
+        //    document.write("try-catch-finaly");
+        //}
+
+        //function w(param) {
+        //    //document.write(param);
+        //    return(param);
+        //}
+
+        ////w(1111111);
+        //document.write(w(11111));
+        //document.write("<br/>");
+
+        //var z = 1;
+
+        //function t() {
+        //    /*var*/ z = 9;
+        //    document.write(z);
+        //}
+
+        //t();
+        //document.write(z);
+
+        //var q = 170;
+        //function factorial(q) {
+        //    if (q < 0)
+        //        return 0;
+        //    if (q == 0)
+        //        return 1;
+        //    else {
+        //        return q * factorial(q-1);
+        //    }
+        //}
+        //document.write(factorial(q));
+
+        var a = true;
+        var b = new Boolean(true);
+        var x = new Number(23);
+        
+        document.write(x);
+        document.write("<br/>");
+        document.write(Number.MAX_VALUE + "<br/>");
+        document.write(Number.MIN_VALUE + "<br/>");
+
+        var str = "My string";
+        var str2 = new String("My string 2");
+
+        function w(param) {
+            document.write(param + "<br/>");
+        }
+
+        w(str);
+        w(str.bold());
+        w(str.fontsize(10).toUpperCase().toLowerCase());
+        w(str.bold().fontcolor("blue").fontsize(10).strike());
+
+        var a = [2, 1, 1, 1, 1, 1, 0, -1, -1011, 64, 58, 6, 5];
+        var ja = new Array(10, 15, 41, 78, 96, -14, 10, 01, 2);
+        var jb = new Array(10);
+        jb[0] = 10;
+        jb[5] = -25;
+        jb.push(3);
+        jb.push('c');
+        jb.push("doctor");
+        jb[2] = 120.011210;
+        //jb.add(12); - do not work
+
+        w(a);
+        w(ja);
+        w(ja.length);
+        delete ja[2];
+        w(ja.length);
+        w(ja);
+        w(ja.sort()); // - sortyvannya v ASCI formati - po pershum cufram - po debilnomy
+        w(ja.sort(function (a,b) { return a - b; })); // - sortyvannya ASC
+        w(ja.sort(function (a,b) { return b - a; })); // - sortyvannya v DESC
+        w(jb);
+
+    </script>
+
+</body>
+</html>
