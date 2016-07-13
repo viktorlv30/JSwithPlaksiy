@@ -29,7 +29,7 @@
 
     document.writeln(arr + "<br/>");
     document.writeln(arr.sort(function (a,b) { return a - b; }) + "<br/>");
-    document.writeln(arr.sort(function (a,b) { return b - a; }) + "<br/>");
+    document.writeln(arr.sort(function (a,b) { return b - a; }));
 
 
 
