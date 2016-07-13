@@ -11,9 +11,56 @@
 <body>
 <script>
 
+    /*
+     * об'єкт GLOBAL
+    **/
 
-    //var x = prompt("Enter number", "0");
+    function w(parameters) {
+        document.write(parameters + "<br/>");
+    }
 
+    w(encodeURI("https://market.ria.com/ваваав<>alert()</>")); //analog ESCAPE
+    w(decodeURI("https://market.ria.com/%D0%B2%D0%B0%D0%B2%D0%B0%D0%B0%D0%B2%3C%3Ealert()%3C/%3E")); //analog UNESCAPE
+
+    /*
+     * eval("w(111111)");
+    **/
+
+
+    /*
+     * MATH
+    **/
+    w(Math.PI);
+    w(Math.ceil(2.12));
+    w(Math.floor(2.99));
+    w(Math.round(2.495));
+    w(Math.round(Math.random() * 100));
+
+    /*
+     * DATE
+     **/
+
+    var d = new Date(2017, 6, 13, 0, 0, 0);
+    var d1 = new Date();
+
+    w(d.getDay());
+    w(d.getMonth());
+    w(d.getYear());
+    w(d.getFullYear());
+    w(d.getTime()); //from January 1, 1970 in millisecond
+    w(d1.getTime()); 
+    w(d.getDate());
+
+
+
+
+    //for (var i in Date) { //don't work
+    //    w(i);
+    //}
+
+
+
+/*
     var y;
     var arr = new Array();
     while ((y = parseInt(prompt("Enter number", "0"))) >= 0) {
@@ -31,7 +78,7 @@
     document.writeln(arr.sort(function (a,b) { return a - b; }) + "<br/>");
     document.writeln(arr.sort(function (a,b) { return b - a; }) + "<br/>");
 
-
+*/
 
     //alert("Hello");
     //window.alert("Hello");
