@@ -15,6 +15,124 @@
         document.write(parameters + "<br/>");
     }
 
+
+    //LOCATION
+    for (var item in location) {
+        w(item);
+    }
+
+    //w(location.port);
+    //w(location.hostname);
+
+    //w(location.search);
+    //w(location.hash);
+    var str = location.href;
+    w(str);
+    //var arr = new Array();
+    //var ch = new String("");
+
+    //for (var i = 0; i < str.length; i++) {
+    //    ch[i] = str[i];
+    //    if (ch[i] === "/") {
+    //        if (ch.length > 0) {
+    //            arr.push(ch);
+    //            ch = "";
+    //        }
+    //    }
+    //}
+
+    //w(arr[0]);
+
+    arr = str.split("/");
+
+    for (var item in arr) {
+        w(arr[item]);
+    }
+
+    w("");
+    w("Ready array without '/'");
+
+    var arrReady = new Array();
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i].length > 0)
+            arrReady.push(arr[i]);
+    }
+
+    for (var item in arrReady) {
+        w(arrReady[item]);
+    }
+
+    //w(encodeURI(location.href));
+    //w(decodeURI(location.href));
+
+    //var url = prompt("Enter url", "yandex.ru");
+    
+    //setTimeout("location.href = 'http://' + url", 3000);
+    
+
+    /*
+    //HISTORY
+    for (var VAR in history) {
+        w(VAR);
+    }
+    w(history.length);
+
+
+    
+    //navigator
+    for (var i in navigator) {
+        w(i);
+    }
+
+    w(navigator.appName); //location navigation, version of browser etc
+        
+    function dateI() {
+
+        var date = new Date();
+        var hour = date.getHours();
+        var minute = date.getMinutes();
+        var second = date.getSeconds();
+
+        hour <= 9 ? w("0" + hour + ":") : w(hour + ":");
+        minute <= 9 ? w("0" + minute + ":") : w(minute + ":");
+        second <= 9 ? w("0" + second) : w(second);
+        document.write("<br/>");
+    }
+
+    var ds = setInterval("dateI()", 1000);
+    
+    var i = 0;
+
+    function ai() {
+        document.write(i);
+        i++;
+    }
+
+    setInterval("ai()", 1000);
+
+    function ti() {
+        document.write("helllo");
+    }
+
+    setTimeout("ti()", 3000);
+
+    var nw;
+    function of() {
+        nw = open("", "name", "width=400, height=400");
+        nw.moveTo(100, 100);
+        nw.document.write("<span style='color:red'>Hello!</span>");
+    }
+
+    function pf() {
+        nw.print();
+    }
+
+    function cf() {
+        nw.close();
+    }
+
+
+    
     function test() {
         var name = "name";
         
@@ -22,16 +140,18 @@
 
         for (var i = 0; i < 1800; i += 300) {
             var nw = open("https://www.google.com.ua", name, "width = 300, height = 300");
-            nw.moveTo(i, 100);
+            if (i < 900) {
+                nw.moveTo(i, 150);
+            } else {
+                nw.moveTo(i-900, 150+300);
+            }
             //nw.moveBy(i, 100);
             name = "pilot" + i;
         }
  
     }
-    
+    */
    
-    
-
     /*
     function Car(color, speed, weight) {
         this.color = color;
@@ -302,7 +422,10 @@
     */
 </script>
 
-    <a href="javascript:test()">Test</a>
+    <!--<a href="javascript:of()">Test </a>-->
+<!--<a href="javascript:cf()">Close </a>
+<a href="javascript:pf()">Print </a>-->
+    <!--<a href="#test123">go</a>-->
 
 </body>
 </html>
