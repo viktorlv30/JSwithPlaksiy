@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>JS_110716</title>
+    <title>JS_150716</title>
     <noscript>Error js</noscript>
 
     <link href="css/style.css" rel="stylesheet" />
@@ -10,35 +10,151 @@
 </head>
 <body>
 <script>
-
-    /*
-     * об'єкт GLOBAL
-    **/
-
+    
     function w(parameters) {
         document.write(parameters + "<br/>");
     }
 
+    function test() {
+        var name = "name";
+        
+        var pos = 100;
+
+        for (var i = 0; i < 1800; i += 300) {
+            var nw = open("https://www.google.com.ua", name, "width = 300, height = 300");
+            nw.moveTo(i, 100);
+            //nw.moveBy(i, 100);
+            name = "pilot" + i;
+        }
+ 
+    }
+    
+   
+    
+
+    /*
+    function Car(color, speed, weight) {
+        this.color = color;
+        this.speed = speed;
+        this.weight = weight;
+
+        function description() {
+            w("Car color = " + color + ", speed = " + speed + " km/h, weight = " + weight + " kg<br/>");
+        }
+
+        function col(parameter) {
+            color = "was changed on '" + parameter + "'";
+        }
+        function spd(parameter) {
+            speed = "was changed on " + parameter;
+        }
+        function wgt(parameter) {
+            weight = "was changed on " + parameter;
+        }
+
+        this.show = description;
+        this.colorChange = col;
+        this.speedChange = spd;
+        this.weightChange = wgt;
+    }
+
+    w("");
+
+    var auto = new Car("green", 120, 2500);
+    auto.show();
+
+    auto = new Car("blue", 250, 1800);
+    auto.show();
+
+    auto.colorChange("yellow");
+    //auto.colorChange("pink");
+    auto.speedChange(280);
+    auto.weightChange(1200);
+    auto.show();
+
+    for (var i in auto) {
+        w(i);
+    }
+    
+    
+
+    
+    var obj = new Object();
+    obj.title = "Test";
+    obj["title2"] = "test1";
+
+    function myF() {
+        for (var i in obj)
+            document.write(i+ " f object test!" + "<br/>");
+    }
+
+    obj.my = myF;
+    obj.my();
+    
+    function Obj2(title, title2) {
+        this.test5 = title;
+        this.test7 = title2;
+
+        function mW() {
+            document.write("TESTIROVKA" + "<br/>");
+        }
+
+        this.show = mW;
+    }
+
+    var myObj = new Obj2("test5", "test7");
+    myObj.show();
+    for (var i in myObj) {
+        w(i);
+    }
+
+
+
+    //var newYear = new Date(2017, 0, 0, 0, 0, 0);
+    //var dateNow = new Date();
+    //var time = newYear - dateNow;
+
+    //var day = Math.round(time / 1000 / 86400);
+    //var ostatok = time - day * 1000 * 86400;
+
+    //var hour = Math.round(ostatok / 1000 / 3600);
+    //ostatok = time - day * 1000 * 86400 - hour * 1000 * 3600;
+
+    //var minute = Math.round(ostatok / 1000 / 60);
+    //ostatok = time - day * 1000 * 86400 - hour * 1000 * 3600 - minute * 1000 * 60;
+
+    //var second = Math.round(ostatok / 1000);
+    
+    ////var month = Math.round(day / 30);
+    
+    //w("Time to New Year (Days:Hour:Minute:Second):");
+    //w(day + ":" + hour + ":" + minute + ":" + second);
+
+    
+     // об'єкт GLOBAL
+    
+    
+
     w(encodeURI("https://market.ria.com/ваваав<>alert()</>")); //analog ESCAPE
     w(decodeURI("https://market.ria.com/%D0%B2%D0%B0%D0%B2%D0%B0%D0%B0%D0%B2%3C%3Ealert()%3C/%3E")); //analog UNESCAPE
 
-    /*
-     * eval("w(111111)");
-    **/
+    
+     // eval("w(111111)");
+    
 
 
-    /*
-     * MATH
-    **/
+    
+    // MATH
+    
     w(Math.PI);
     w(Math.ceil(2.12));
     w(Math.floor(2.99));
     w(Math.round(2.495));
     w(Math.round(Math.random() * 100));
 
-    /*
-     * DATE
-     **/
+    
+     //DATE
+     
 
     var d = new Date(2017, 6, 13, 0, 0, 0);
     var d1 = new Date();
@@ -51,8 +167,8 @@
     w(d1.getTime()); 
     w(d.getDate());
 
-
-
+    
+    
 
     //for (var i in Date) { //don't work
     //    w(i);
@@ -60,7 +176,7 @@
 
 
 
-/*
+
     var y;
     var arr = new Array();
     while ((y = parseInt(prompt("Enter number", "0"))) >= 0) {
@@ -78,113 +194,115 @@
     document.writeln(arr.sort(function (a,b) { return a - b; }) + "<br/>");
     document.writeln(arr.sort(function (a,b) { return b - a; }) + "<br/>");
 
-*/
-
-    //alert("Hello");
-    //window.alert("Hello");
-
-    //document.write("world");
-    //window.document.write("world");
-
-    //for (var i in window) {
-    //    document.writeln(i + "<br/>");
-    //}
 
 
-    //var x = 0;
-    //var y = 0;
-    //while ((x = parseInt(prompt("Go go", "2"))) != 0) {
-    //    y += x;      
-    //}
-    //document.write(y);
+//alert("Hello");
+//window.alert("Hello");
+
+//document.write("world");
+//window.document.write("world");
+
+//for (var i in window) {
+//    document.writeln(i + "<br/>");
+//}
 
 
-    //try {
-    //    y = 1 / 'r';
-    //}
-    //catch (e) {
-    //    alert("e.Name");
-    //}
-    //finally
-    //{
-    //    document.write("try-catch-finaly");
-    //}
+//var x = 0;
+//var y = 0;
+//while ((x = parseInt(prompt("Go go", "2"))) != 0) {
+//    y += x;      
+//}
+//document.write(y);
 
-    //function w(param) {
-    //    //document.write(param);
-    //    return(param);
-    //}
 
-    ////w(1111111);
-    //document.write(w(11111));
-    //document.write("<br/>");
+//try {
+//    y = 1 / 'r';
+//}
+//catch (e) {
+//    alert("e.Name");
+//}
+//finally
+//{
+//    document.write("try-catch-finaly");
+//}
 
-    //var z = 1;
+//function w(param) {
+//    //document.write(param);
+//    return(param);
+//}
 
-    //function t() {
-    //    /*var*/ z = 9;
-    //    document.write(z);
-    //}
+////w(1111111);
+//document.write(w(11111));
+//document.write("<br/>");
 
-    //t();
-    //document.write(z);
+//var z = 1;
 
-    //var q = 170;
-    //function factorial(q) {
-    //    if (q < 0)
-    //        return 0;
-    //    if (q == 0)
-    //        return 1;
-    //    else {
-    //        return q * factorial(q-1);
-    //    }
-    //}
-    //document.write(factorial(q));
+//function t() {
+//    var z = 9;
+//    document.write(z);
+//}
 
-    //var a = true;
-    //var b = new Boolean(true);
-    //var x = new Number(23);
+//t();
+//document.write(z);
+
+//var q = 170;
+//function factorial(q) {
+//    if (q < 0)
+//        return 0;
+//    if (q == 0)
+//        return 1;
+//    else {
+//        return q * factorial(q-1);
+//    }
+//}
+//document.write(factorial(q));
+
+//var a = true;
+//var b = new Boolean(true);
+//var x = new Number(23);
         
-    //document.write(x);
-    //document.write("<br/>");
-    //document.write(Number.MAX_VALUE + "<br/>");
-    //document.write(Number.MIN_VALUE + "<br/>");
+//document.write(x);
+//document.write("<br/>");
+//document.write(Number.MAX_VALUE + "<br/>");
+//document.write(Number.MIN_VALUE + "<br/>");
 
-    //var str = "My string";
-    //var str2 = new String("My string 2");
+//var str = "My string";
+//var str2 = new String("My string 2");
 
-    //function w(param) {
-    //    document.write(param + "<br/>");
-    //}
+//function w(param) {
+//    document.write(param + "<br/>");
+//}
 
-    //w(str);
-    //w(str.bold());
-    //w(str.fontsize(10).toUpperCase().toLowerCase());
-    //w(str.bold().fontcolor("blue").fontsize(10).strike());
+//w(str);
+//w(str.bold());
+//w(str.fontsize(10).toUpperCase().toLowerCase());
+//w(str.bold().fontcolor("blue").fontsize(10).strike());
 
-    //var a = [2, 1, 1, 1, 1, 1, 0, -1, -1011, 64, 58, 6, 5];
-    //var ja = new Array(10, 15, 41, 78, 96, -14, 10, 01, 2);
-    //var jb = new Array(10);
-    //jb[0] = 10;
-    //jb[5] = -25;
-    //jb.push(3);
-    //jb.push('c');
-    //jb.push("doctor");
-    //jb[2] = 120.011210;
-    ////jb.add(12); - do not work
+//var a = [2, 1, 1, 1, 1, 1, 0, -1, -1011, 64, 58, 6, 5];
+//var ja = new Array(10, 15, 41, 78, 96, -14, 10, 01, 2);
+//var jb = new Array(10);
+//jb[0] = 10;
+//jb[5] = -25;
+//jb.push(3);
+//jb.push('c');
+//jb.push("doctor");
+//jb[2] = 120.011210;
+////jb.add(12); - do not work
 
-    //w(a);
-    //w(ja);
-    //w(ja.length);
-    //delete ja[2];
-    //w(ja.length);
-    //w(ja);
-    //w(ja.sort()); // - sortyvannya v ASCI formati - po pershum cufram - po debilnomy
-    //w(ja.sort(function (a,b) { return a - b; })); // - sortyvannya ASC
-    //w(ja.sort(function (a,b) { return b - a; })); // - sortyvannya v DESC
-    //w(jb);
-
+//w(a);
+//w(ja);
+//w(ja.length);
+//delete ja[2];
+//w(ja.length);
+//w(ja);
+//w(ja.sort()); // - sortyvannya v ASCI formati - po pershum cufram - po debilnomy
+//w(ja.sort(function (a,b) { return a - b; })); // - sortyvannya ASC
+//w(ja.sort(function (a,b) { return b - a; })); // - sortyvannya v DESC
+//w(jb);
+    */
 </script>
+
+    <a href="javascript:test()">Test</a>
 
 </body>
 </html>
