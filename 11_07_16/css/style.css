@@ -1,2 +1,10 @@
-﻿body {
+﻿.block-grey {
+    height: 100%;
+    width: 100%;
+    background: grey;
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+
 }
+
