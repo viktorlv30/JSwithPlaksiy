@@ -5,118 +5,158 @@
     <title>JS</title>
     <noscript>Error js</noscript>
 
-
 </head>
 <body>
 
+<form>
+  First name:<br>
+  <input type="text" name="firstname"><br>
+  Last name:<br>
+  <input type="text" name="lastname"><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+
+
+<!-- <ul>
+	<li>first</li>
+	<li>second</li>
+	<li>third</li>
+	<li>fourth</li>
+	<li>fifth</li>
+</ul> -->
+
 <script>
 
-    //document.writeln('hello');
-    /*
-    *
-    * */
 
-    //xbgnbfadfnmbnbssfgbn
+function w(param)
+{
+	document.write(param + "<br/>");
+}
 
-//    alert('world');
+function show()
+{
+	var sh = document.body.childNodes[1].childNodes[3].nodeName;
+	alert(sh);
+}
 
-    /*
-    var myVar = 9;//global
-    document.writeln(myVar);
-    function myF() {
-        var myVar = 'hello';//local
-        document.writeln(myVar);
-    }
+show();
 
-    myF();
-    document.writeln(myVar * 9);
-    */
 
-    /*
-    JS official has 7 main types of data + 1 addiction:
-     1. undefined
-     2. null
-     3. string
-     4. number
-     5. object
-     6. boolean
-     7. symbol
-     +
-     8. regular expression
-    */
 
-    /*
-    * There are three literal types of data:
-    * string, number, boolean
-    * */
+// var d = parseInt(prompt("Enter element", ""));
 
-    /*
-    var x = "";
-    var y = 0;
-    var z = null;
-    var t;
-    var w = false;
-    var q = true;
+// if(d <= 1)
+// 	w(document.body.childNodes[1].childNodes[d].childNodes[0].nodeValue);
+// else
+// 	w(document.body.childNodes[1].childNodes[d+d-1].childNodes[0].nodeValue);
 
-    document.writeln(w && q);
-    document.writeln(w || q);
-    document.writeln(false);
-    document.writeln(true);
 
-    var f = 1;
-    var h = 9;
-    var r = '1';
-    if(f === r) {
-        document.writeln(true);
-    }
-    else {
-        document.writeln(false);
-    }
 
-    var str1 = 'Hello dima \'your Wife\'';
-    var str2 = 'Hello dima "your Wife"';
-    var str3 = "Hello dima \"your Wife\"" + f + h;
-    var str4 = f + h + "Hello dima \"your Wife\"";
-    var str5 = 1 + '1';
-    var str6 = 1 + '1'*1;
-    document.writeln(str1);
-    document.writeln(str2);
-    document.writeln(str3);
-    document.writeln(str4);
-    document.writeln(str5);
-    document.writeln(str6);
+//     document.writeln('hello');
 
-    var y = 34;
-    document.writeln(y);
-    y = 034; // вісімкова система автоматичне приведення
-    document.writeln(y);
-    y = 0x11;
-    document.writeln(y);
-    y = 5e2;
-    document.writeln(y);
-    y = 5e-2;
-    document.writeln(y);
-    */
+
+//     alert('world');
+
+    
+//     var myVar = 9;//global
+//     document.writeln(myVar);
+//     function myF() {
+//         var myVar = 'hello';//local
+//         document.writeln(myVar);
+//     }
+
+//     myF();
+//     document.writeln(myVar * 9);
+    
+
+    
+//     //JS official has 7 main types of data + 1 addiction:
+//     // 1. undefined
+//     // 2. null
+//     // 3. string
+//    //  4. number
+//     // 5. object
+//     // 6. boolean
+//     // 7. symbol
+//     // +
+//    //  8. regular expression
+    
+
+    
+//     //There are three literal types of data:
+//     //string, number, boolean
+    
+
+    
+//     var x = "";
+//     var y = 0;
+//     var z = null;
+//     var t;
+//     var w = false;
+//     var q = true;
+
+//     document.writeln(w && q);
+//     document.writeln(w || q);
+//     document.writeln(false);
+//     document.writeln(true);
+
+//     var f = 1;
+//     var h = 9;
+//     var r = '1';
+//     if(f === r) {
+//         document.writeln(true);
+//     }
+//     else {
+//         document.writeln(false);
+//     }
+
+//     var str1 = 'Hello dima \'your Wife\'';
+//     var str2 = 'Hello dima "your Wife"';
+//     var str3 = "Hello dima \"your Wife\"" + f + h;
+//     var str4 = f + h + "Hello dima \"your Wife\"";
+//     var str5 = 1 + '1';
+//     var str6 = 1 + '1'*1;
+//     document.writeln(str1);
+//     document.writeln(str2);
+//     document.writeln(str3);
+//     document.writeln(str4);
+//     document.writeln(str5);
+//     document.writeln(str6);
+
+//     var y = 34;
+//     document.writeln(y);
+//     y = 034; // вісімкова система автоматичне приведення
+//     document.writeln(y);
+//     y = 0x11;
+//     document.writeln(y);
+//     y = 5e2;
+//     document.writeln(y);
+//     y = 5e-2;
+//     document.writeln(y);
+    
 
 //    q=-2;
 //    document.writeln(q/'g');
+   
 
-    //      +-*/%
+//          *+-/%
 
 //    var x = confirm("Do you want delete this?");
 //    document.writeln(x);
 
 //    var x = parseInt(prompt("1","2"));
-//
+
 //    if(isNaN(x)) {
 //        document.writeln(x);
 //    }
-////
-////    if(x) {
-////        document.writeln(x);
-////    } else if(!x)
-////    {}
-//
+
+//     if(x) {
+//         document.writeln(x);
+//     } else if(!x)
+//     {}
+
 //    switch (x)
 //    {
 //        case 1:
@@ -145,20 +185,20 @@
 //            break;
 //    }
 
-    document.write("<table width='300' border='2'>");
-    for(var i=0; i<8; i++)
-    {
-        document.write("<tr>");
-        for(var j=0; j<8; j++)
-        {
-            if((i+j)%2 == 0)
-                document.write("<td>"+j+"</td>");
-            else
-                document.write("<td bgcolor='black'>"+j+"</td>");
-        }
-        document.write("</tr>");
-    }
-    document.write("</table>");
+//     document.write("<table width='300' border='2'>");
+//     for(var i=0; i<8; i++)
+//     {
+//         document.write("<tr>");
+//         for(var j=0; j<8; j++)
+//         {
+//             if((i+j)%2 == 0)
+//                 document.write("<td>"+j+"</td>");
+//             else
+//                 document.write("<td bgcolor='black'>"+j+"</td>");
+//         }
+//         document.write("</tr>");
+//     }
+//     document.write("</table>");
 
 //    x = prompt("1","2");
 //    switch (x)
