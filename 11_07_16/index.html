@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     
@@ -9,12 +9,202 @@
 
 </head>
 <body>
-<b><span>w</span></b>
-<p> text <span> text2 </span> tExT3</p>      
+<style>
+div{
+	height:100px;
+	width:100px;
+	background:yellow;
+	border:1px solid yellow;
+}
+</style>
+
+
+<!-- <a href="#" onclick="openbox('text'); return false">SHOW</a> -->
+
+<!-- <a href="#" onclick="closebox('text'); return false">SHOW</a>. -->
+
+<!-- <div id="text">1</div> -->
+<!-- <div id="text">2</div>
+<div id="text">3</div>
+<div id="text">4</div>
+<div id="text">5</div>
+<div id="text">6</div>
+<div id="text">7</div>
+<div id="text">8</div>
+<div id="text">9</div>
+<div id="test">10</div> -->
+<!-- <div></div> -->
+<!-- <div>
+<ul>
+	<li>first</li>
+	<li>second</li>
+	<li>third</li>
+	<li>fourth</li>
+	<li>fifth</li>
+</ul>
+</div>
+
+ -->
+
+ <div id="clock"></div>
+
 <script>
+
     function w(param) {
-        document.write(param + "<br/>");
+        document.write(param + "</br>");
     }
+
+    var marginTop = screen.availHeight - 10 - 200;
+    var marginSide = screen.availWidth - 10 - 100;
+    var circle = 0;
+    function cloki()
+    {
+
+   		var dateNow = new Date();
+    	var time = dateNow.getHours() + ":" + dateNow.getMinutes() + " " + dateNow.getSeconds();
+	  	document.getElementById("clock").innerHTML = time;
+	  	var el = document.getElementById("clock");
+	 
+	  			  	
+	  	if(circle === 0) {
+	  		el.style.margin =  "0px 0px";
+	  		circle++;
+	  	} else if(circle === 1) {
+	  		el.style.margin =  "0px " + marginSide + "px";
+	  		circle++;
+	  	} else if(circle === 2) {
+	  		el.style.margin =  marginTop + "px " + marginSide + "px";
+	  		circle++;
+	  	} else if(circle === 3) {
+	  		el.style.margin =  marginTop + "px 0px";
+	  		circle = 0;
+	  	} 
+	  		
+	  	var R = Math.floor(Math.random() * 255);
+        var G = Math.floor(Math.random() * 255);
+        var B = Math.floor(Math.random() * 255);
+	
+		el.style.background="rgb(" + R + "," + G + "," + B +")";
+    }
+
+   
+    setInterval(cloki,1000);
+   
+
+
+
+
+
+
+// var num = document.getElementsByTagName("div");
+// for(var i = 0; i < num.length; i++)
+// {
+// 	if(i%2)
+// 		num[i].style.float="right";
+// 	var R = Math.floor(Math.random() * 255);
+//     var G = Math.floor(Math.random() * 255);
+//     var B = Math.floor(Math.random() * 255);
+	
+// 	num[i].style.background="rgb(" + R + "," + G + "," + B +")";
+// }
+
+
+
+
+
+
+
+/*
+var el = document.getElementsByTagName("div");
+w("<div>12351</div>");
+w(el.length);
+w(el[0].innerHTML);
+el[1].style.color='pink';
+el[1].style.fontSize='50px';
+
+function showLi(){
+	var number = parseInt(prompt("Enter number between 1-5",""));
+	var lishku = document.getElementsByTagName("li");
+	w(lishku[number-1].innerHTML);
+}
+*/
+// showLi();
+
+
+/*
+
+function openbox(id)
+{
+	display= document.getElementById(id).style.display;
+
+	if(display == 'none'){
+		document.getElementById(id).style.display='block';
+	}else{
+		document.getElementById(di).style.display='none';
+	}
+}
+
+function closebox(id)
+{
+	display= document.getElementById(id).style.display;
+
+	if(display == 'block'){
+		document.getElementById(id).style.display='none';
+	}else{
+		document.getElementById(di).style.display='block';
+	}
+}
+
+
+openbox(text);
+closebox(text);	
+
+
+
+text.style.fontSize="50px";
+text.style.color="green";
+
+*/
+
+
+/*
+    var t = document.getElementById("test").innerHTML;
+    // = "<span style='color:green'>test 3</span>";
+
+    var d = document.getElementById("test123").innerText;
+    // = "<span style='color:red'>test 4</span>";
+    // alert(t);
+    // alert(d);
+    
+    document.getElementById("test").style.color="red";
+    document.getElementById("test").style.fontSize="40px";
+
+    var R = 0;
+    var G = 255;
+    var B = 0;
+
+    function text()
+    {
+      
+        document.getElementById("test").style.color="rgb(" + R + "," + G + "," + B +")";
+        R = Math.floor(Math.random() * 255);
+        G = Math.floor(Math.random() * 255);
+        B = Math.floor(Math.random() * 255);
+
+    }
+
+    setInterval(text, 200);
+   */  
+    
+
+    // function show()
+    // {
+    //     var sh = document.body.childNodes[1].childNodes[3].nodeName;
+    //     alert(sh);
+    // }
+
+    // show();
+
     //var z = document.body.childNodes[2];
     //w(z);
     //var d = z.parentNode.nodeName;
@@ -26,16 +216,16 @@
 
     //w(document.documentElement.childNodes[1].nodeName); //main tag html
 
-    w(document.body.childNodes[1].firstChild.firstChild.nodeValue);
-    w(document.body.childNodes[3].lastChild.nodeValue);
-    w(document.body.childNodes[3].nextSibling.nodeValue);
+    // w(document.body.childNodes[1].firstChild.firstChild.nodeValue);
+    // w(document.body.childNodes[3].lastChild.nodeValue);
+    // w(document.body.childNodes[3].nextSibling.nodeValue);
 
     //firstChield
     //lastChield
 
     //parenNode
 
-/*
+
     //SCREEN
 
     //for (var VAR in screen) {
@@ -44,43 +234,43 @@
 
     //w("width " + screen.width + " Height " + screen.height);
 
-    var heig = 300;
-    var widt = 400;
+    // var heig = 300;
+    // var widt = 400;
 
-    var startHeight = (screen.availHeight - heig) / 2;
-    var startWidth = (screen.availWidth - widt) / 2;
+    // var startHeight = (screen.availHeight - heig) / 2;
+    // var startWidth = (screen.availWidth - widt) / 2;
 
     //w(screen.availWidth + " " + screen.availHeight);
     //w(startWidth + " " + startHeight);
 
-    function block(heightStart, widthStart) {
-        document.write("<div class='block-grey'>");
-        document.write('<div style="position: fixed; margin-top:' +
-            heightStart +
-            'px; margin-left:' +
-            widthStart +
-            'px; height:' +
-            heig +
-            'px; width:' +
-            widt +
-            'px; background-color:red">');
-        document.write("</div></div>");
-    }
+    // function block(heightStart, widthStart) {
+    //     document.write("<div class='block-grey'>");
+    //     document.write('<div style="position: fixed; margin-top:' +
+    //         heightStart +
+    //         'px; margin-left:' +
+    //         widthStart +
+    //         'px; height:' +
+    //         heig +
+    //         'px; width:' +
+    //         widt +
+    //         'px; background-color:red">');
+    //     document.write("</div></div>");
+    // }
 
-    block(startHeight, startWidth);
+    // block(startHeight, startWidth);
 
-    //LOCATION
-    for (var item in location) {
-        w(item);
-    }
+    // //LOCATION
+    // for (var item in location) {
+    //     w(item);
+    // }
 
     //w(location.port);
     //w(location.hostname);
 
     //w(location.search);
     //w(location.hash);
-    var str = location.href;
-    w(str);
+    // var str = location.href;
+    // w(str);
     //var arr = new Array();
     //var ch = new String("");
 
@@ -95,25 +285,25 @@
     //}
 
     //w(arr[0]);
-    /*
-    arr = str.split("/");
+    
+    // arr = str.split("/");
 
-    for (var item in arr) {
-        w(arr[item]);
-    }
+    // for (var item in arr) {
+    //     w(arr[item]);
+    // }
 
-    w("");
-    w("Ready array without '/'");
+    // w("");
+    // w("Ready array without '/'");
 
-    var arrReady = new Array();
-    for (var i = 0; i < arr.length; i++) {
-        if (arr[i].length > 0)
-            arrReady.push(arr[i]);
-    }
+    // var arrReady = new Array();
+    // for (var i = 0; i < arr.length; i++) {
+    //     if (arr[i].length > 0)
+    //         arrReady.push(arr[i]);
+    // }
 
-    for (var item in arrReady) {
-        w(arrReady[item]);
-    }
+    // for (var item in arrReady) {
+    //     w(arrReady[item]);
+    // }
 
     //w(encodeURI(location.href));
     //w(decodeURI(location.href));
@@ -125,161 +315,161 @@
 
     
     //HISTORY
-    for (var VAR in history) {
-        w(VAR);
-    }
-    w(history.length);
+    // for (var VAR in history) {
+    //     w(VAR);
+    // }
+    // w(history.length);
 
 
     
-    //navigator
-    for (var i in navigator) {
-        w(i);
-    }
+    // //navigator
+    // for (var i in navigator) {
+    //     w(i);
+    // }
 
-    w(navigator.appName); //location navigation, version of browser etc
+    // w(navigator.appName); //location navigation, version of browser etc
         
-    function dateI() {
+    // function dateI() {
 
-        var date = new Date();
-        var hour = date.getHours();
-        var minute = date.getMinutes();
-        var second = date.getSeconds();
+    //     var date = new Date();
+    //     var hour = date.getHours();
+    //     var minute = date.getMinutes();
+    //     var second = date.getSeconds();
 
-        hour <= 9 ? w("0" + hour + ":") : w(hour + ":");
-        minute <= 9 ? w("0" + minute + ":") : w(minute + ":");
-        second <= 9 ? w("0" + second) : w(second);
-        document.write("<br/>");
-    }
+    //     hour <= 9 ? w("0" + hour + ":") : w(hour + ":");
+    //     minute <= 9 ? w("0" + minute + ":") : w(minute + ":");
+    //     second <= 9 ? w("0" + second) : w(second);
+    //     document.write("<br/>");
+    // }
 
-    var ds = setInterval("dateI()", 1000);
+    // var ds = setInterval("dateI()", 1000);
     
-    var i = 0;
+    // var i = 0;
 
-    function ai() {
-        document.write(i);
-        i++;
-    }
+    // function ai() {
+    //     document.write(i);
+    //     i++;
+    // }
 
-    setInterval("ai()", 1000);
+    // setInterval("ai()", 1000);
 
-    function ti() {
-        document.write("helllo");
-    }
+    // function ti() {
+    //     document.write("helllo");
+    // }
 
-    setTimeout("ti()", 3000);
+    // setTimeout("ti()", 3000);
 
-    var nw;
-    function of() {
-        nw = open("", "name", "width=400, height=400");
-        nw.moveTo(100, 100);
-        nw.document.write("<span style='color:red'>Hello!</span>");
-    }
+    // var nw;
+    // function of() {
+    //     nw = open("", "name", "width=400, height=400");
+    //     nw.moveTo(100, 100);
+    //     nw.document.write("<span style='color:red'>Hello!</span>");
+    // }
 
-    function pf() {
-        nw.print();
-    }
+    // function pf() {
+    //     nw.print();
+    // }
 
-    function cf() {
-        nw.close();
-    }
+    // function cf() {
+    //     nw.close();
+    // }
 
 
     
-    function test() {
-        var name = "name";
+    // function test() {
+    //     var name = "name";
         
-        var pos = 100;
+    //     var pos = 100;
 
-        for (var i = 0; i < 1800; i += 300) {
-            var nw = open("https://www.google.com.ua", name, "width = 300, height = 300");
-            if (i < 900) {
-                nw.moveTo(i, 150);
-            } else {
-                nw.moveTo(i-900, 150+300);
-            }
-            //nw.moveBy(i, 100);
-            name = "pilot" + i;
-        }
+    //     for (var i = 0; i < 1800; i += 300) {
+    //         var nw = open("https://www.google.com.ua", name, "width = 300, height = 300");
+    //         if (i < 900) {
+    //             nw.moveTo(i, 150);
+    //         } else {
+    //             nw.moveTo(i-900, 150+300);
+    //         }
+    //         //nw.moveBy(i, 100);
+    //         name = "pilot" + i;
+    //     }
  
-    }
+    // }
     
    
     
-    function Car(color, speed, weight) {
-        this.color = color;
-        this.speed = speed;
-        this.weight = weight;
+    // function Car(color, speed, weight) {
+    //     this.color = color;
+    //     this.speed = speed;
+    //     this.weight = weight;
 
-        function description() {
-            w("Car color = " + color + ", speed = " + speed + " km/h, weight = " + weight + " kg<br/>");
-        }
+    //     function description() {
+    //         w("Car color = " + color + ", speed = " + speed + " km/h, weight = " + weight + " kg<br/>");
+    //     }
 
-        function col(parameter) {
-            color = "was changed on '" + parameter + "'";
-        }
-        function spd(parameter) {
-            speed = "was changed on " + parameter;
-        }
-        function wgt(parameter) {
-            weight = "was changed on " + parameter;
-        }
+    //     function col(parameter) {
+    //         color = "was changed on '" + parameter + "'";
+    //     }
+    //     function spd(parameter) {
+    //         speed = "was changed on " + parameter;
+    //     }
+    //     function wgt(parameter) {
+    //         weight = "was changed on " + parameter;
+    //     }
 
-        this.show = description;
-        this.colorChange = col;
-        this.speedChange = spd;
-        this.weightChange = wgt;
-    }
+    //     this.show = description;
+    //     this.colorChange = col;
+    //     this.speedChange = spd;
+    //     this.weightChange = wgt;
+    // }
 
-    w("");
+    // w("");
 
-    var auto = new Car("green", 120, 2500);
-    auto.show();
+    // var auto = new Car("green", 120, 2500);
+    // auto.show();
 
-    auto = new Car("blue", 250, 1800);
-    auto.show();
+    // auto = new Car("blue", 250, 1800);
+    // auto.show();
 
-    auto.colorChange("yellow");
-    //auto.colorChange("pink");
-    auto.speedChange(280);
-    auto.weightChange(1200);
-    auto.show();
+    // auto.colorChange("yellow");
+    // //auto.colorChange("pink");
+    // auto.speedChange(280);
+    // auto.weightChange(1200);
+    // auto.show();
 
-    for (var i in auto) {
-        w(i);
-    }
+    // for (var i in auto) {
+    //     w(i);
+    // }
     
     
 
     
-    var obj = new Object();
-    obj.title = "Test";
-    obj["title2"] = "test1";
+    // var obj = new Object();
+    // obj.title = "Test";
+    // obj["title2"] = "test1";
 
-    function myF() {
-        for (var i in obj)
-            document.write(i+ " f object test!" + "<br/>");
-    }
+    // function myF() {
+    //     for (var i in obj)
+    //         document.write(i+ " f object test!" + "<br/>");
+    // }
 
-    obj.my = myF;
-    obj.my();
+    // obj.my = myF;
+    // obj.my();
     
-    function Obj2(title, title2) {
-        this.test5 = title;
-        this.test7 = title2;
+    // function Obj2(title, title2) {
+    //     this.test5 = title;
+    //     this.test7 = title2;
 
-        function mW() {
-            document.write("TESTIROVKA" + "<br/>");
-        }
+    //     function mW() {
+    //         document.write("TESTIROVKA" + "<br/>");
+    //     }
 
-        this.show = mW;
-    }
+    //     this.show = mW;
+    // }
 
-    var myObj = new Obj2("test5", "test7");
-    myObj.show();
-    for (var i in myObj) {
-        w(i);
-    }
+    // var myObj = new Obj2("test5", "test7");
+    // myObj.show();
+    // for (var i in myObj) {
+    //     w(i);
+    // }
 
 
 
@@ -308,8 +498,8 @@
     
     
 
-    w(encodeURI("https://market.ria.com/ваваав<>alert()</>")); //analog ESCAPE
-    w(decodeURI("https://market.ria.com/%D0%B2%D0%B0%D0%B2%D0%B0%D0%B0%D0%B2%3C%3Ealert()%3C/%3E")); //analog UNESCAPE
+    // w(encodeURI("https://market.ria.com/ваваав<>alert()</>")); //analog ESCAPE
+    // w(decodeURI("https://market.ria.com/%D0%B2%D0%B0%D0%B2%D0%B0%D0%B0%D0%B2%3C%3Ealert()%3C/%3E")); //analog UNESCAPE
 
     
      // eval("w(111111)");
@@ -319,26 +509,26 @@
     
     // MATH
     
-    w(Math.PI);
-    w(Math.ceil(2.12));
-    w(Math.floor(2.99));
-    w(Math.round(2.495));
-    w(Math.round(Math.random() * 100));
+    // w(Math.PI);
+    // w(Math.ceil(2.12));
+    // w(Math.floor(2.99));
+    // w(Math.round(2.495));
+    // w(Math.round(Math.random() * 100));
 
     
      //DATE
      
 
-    var d = new Date(2017, 6, 13, 0, 0, 0);
-    var d1 = new Date();
+    // var d = new Date(2017, 6, 13, 0, 0, 0);
+    // var d1 = new Date();
 
-    w(d.getDay());
-    w(d.getMonth());
-    w(d.getYear());
-    w(d.getFullYear());
-    w(d.getTime()); //from January 1, 1970 in millisecond
-    w(d1.getTime()); 
-    w(d.getDate());
+    // w(d.getDay());
+    // w(d.getMonth());
+    // w(d.getYear());
+    // w(d.getFullYear());
+    // w(d.getTime()); //from January 1, 1970 in millisecond
+    // w(d1.getTime()); 
+    // w(d.getDate());
 
     
     
@@ -350,22 +540,22 @@
 
 
 
-    var y;
-    var arr = new Array();
-    while ((y = parseInt(prompt("Enter number", "0"))) >= 0) {
-        arr.push(y);
-        if (y == 0) {
-            document.write('<p style="color:blue; font-size:30px; margin:0;">' + y + '</p>');
-        } else if (y < 5) {
-            document.write('<p style="color:green; font-size:50px; margin:0;">' + y + '</p>');
-        } else
-            document.write('<p style="color:pink; font-size:80px; margin:0;">' + y + '</p>');
+    // var y;
+    // var arr = new Array();
+    // while ((y = parseInt(prompt("Enter number", "0"))) >= 0) {
+    //     arr.push(y);
+    //     if (y == 0) {
+    //         document.write('<p style="color:blue; font-size:30px; margin:0;">' + y + '</p>');
+    //     } else if (y < 5) {
+    //         document.write('<p style="color:green; font-size:50px; margin:0;">' + y + '</p>');
+    //     } else
+    //         document.write('<p style="color:pink; font-size:80px; margin:0;">' + y + '</p>');
        
-    }
+    // }
 
-    document.writeln(arr + "<br/>");
-    document.writeln(arr.sort(function (a,b) { return a - b; }) + "<br/>");
-    document.writeln(arr.sort(function (a,b) { return b - a; }) + "<br/>");
+    // document.writeln(arr + "<br/>");
+    // document.writeln(arr.sort(function (a,b) { return a - b; }) + "<br/>");
+    // document.writeln(arr.sort(function (a,b) { return b - a; }) + "<br/>");
 
 
 
@@ -472,9 +662,36 @@
 //w(ja.sort(function (a,b) { return a - b; })); // - sortyvannya ASC
 //w(ja.sort(function (a,b) { return b - a; })); // - sortyvannya v DESC
 //w(jb);
-    */
+    
 </script>
 
+<!-- 
+<div id="test">Test element</div>
+&copy;
+
+<div id="test123" class="" style=""><b>12345646</b></div> -->
+
+<!-- <span id="123"></span>  not correct - prohibited repeat id  -->
+
+<!-- 
+ <form>
+  First name:<br>
+  <input type="text" name="firstname"><br>
+  Last name:<br>
+  <input type="text" name="lastname"><br>
+  <input type="submit" value="Submit">
+</form>
+
+ <ul>
+    <li>first</li>
+    <li>second</li>
+    <li>third</li>
+    <li>fourth</li>
+    <li>fifth</li>
+</ul> 
+
+ <b><span>w</span></b>
+<p> text <span> text2 </span> tExT3</p>    -->
 
 <!--<a href="javascript:of()">Test </a>-->
 <!--<a href="javascript:cf()">Close </a>
