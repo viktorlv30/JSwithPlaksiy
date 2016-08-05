@@ -1,58 +1,202 @@
 <!DOCTYPE html>
 <html>
 <head>
-    
     <meta charset="UTF-8">
-    <title>JS_150716</title>
+    <title>JS_010816</title>
     <noscript>Error js</noscript>
     <link href="css/style.css" rel="stylesheet"/>
-
 </head>
+
 <body>
-<style>
-div{
-	height:100px;
-	width:100px;
-	background:yellow;
-	border:1px solid yellow;
-}
-</style>
 
-
-<!-- <a href="#" onclick="openbox('text'); return false">SHOW</a> -->
-
-<!-- <a href="#" onclick="closebox('text'); return false">SHOW</a>. -->
-
-<!-- <div id="text">1</div> -->
-<!-- <div id="text">2</div>
-<div id="text">3</div>
-<div id="text">4</div>
-<div id="text">5</div>
-<div id="text">6</div>
-<div id="text">7</div>
-<div id="text">8</div>
-<div id="text">9</div>
-<div id="test">10</div> -->
-<!-- <div></div> -->
-<!-- <div>
-<ul>
-	<li>first</li>
-	<li>second</li>
-	<li>third</li>
-	<li>fourth</li>
-	<li>fifth</li>
+<div id="test" onclick="closebox()"><b>TEXT EVENT</b></div>
+<ul id="ul">
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
 </ul>
+
+<div id="deleteLi" onclick="delet_LI()">
+	
 </div>
 
- -->
+<form name="form1">
+   <p>Имя: <input name="user" placeholder="NameUser"></p>
+   <p>Пароль: <input name="pass" type="password"></p>
+   <input type="radio" name="gender1" value="male" checked/> Male<br>
+   <input type="radio" name="gender2" value="female"/> Female<br>
+   <input type="radio" name="gender3" value="other"/> Other <br>
+   <input type="submit" name="button1" value="Submit"/>  
+ </form> 
 
- <div id="clock"></div>
+ <form name="form2">
+   <p>Ім'я: <input name="user" placeholder="SecondUser"></p>
+   <p>Пасворд: <input name="pass" type="passwordTwo" placeholder="his password"></p>
+   <input type="radio" name="gender" value="MALE" checked/> Male<br>
+   <input type="radio" name="gender" value="FEMALE"/> Female<br>
+   <input type="radio" name="gender" value="OTHER"/> Other <br>
+   <input type="submit" name="button2" value="Submit"/>  
+ </form> 
+
+  <form name="form3">
+   <input type="checkbox" name="test" value="123" />
+   <input type="checkbox" name="test" value="123" />
+   <input type="checkbox" name="test" value="123" />
+   <input type="checkbox" name="test" value="123" />
+   <input type="checkbox" name="test" value="123" />
+   <input type="checkbox" name="test" value="123" />
+   <input type="checkbox" name="test" value="123" />
+   <input type="checkbox" name="test" value="123" />
+   <input type="checkbox" name="test" value="123" />
+   <input type="checkbox" name="test" value="123" />
+   <input type="checkbox" name="test" value="123" />
+   <input type="submit" name="button2" value="Submit" onclick="num()" />  
+ </form> 
 
 <script>
 
-    function w(param) {
+function w(param) {
         document.write(param + "</br>");
     }
+
+// var fi = document.forms[0];
+// alert(fi.length);
+// alert(fi.elements.length);
+
+// for(var i = 0; i < fi.elements.length; i++ )
+// {
+// 	w(fi.elements[i].type + " " + fi.elements[i].name + " " + fi.elements[i].value);
+// }
+
+// document.forms[0]
+// document.forms['form2']
+// document.forms.form1
+// document.form2
+
+
+var chBx = document.form3;
+var len = 0;
+
+
+function num()
+{
+	for(var i = 0; i < chBx.elements.length; i++)
+	{
+		if(chBx.elements[i].type == "checkbox" && chBx.elements[i].checked == true)
+			len++;
+		// w(chBx.elements[i].type);
+	}
+	alert(len);
+}
+
+
+//
+//
+//PODII TA IX OPRACYUVANNYA
+//
+//
+
+function showInfo(){
+	alert("Hello people");
+}
+
+function delet_LI(){
+	var ule = document.getElementById("ul");
+	ule.removeChild(ule.childNodes[0]);
+}
+
+// for(var i in window)
+// {
+// 	w(i);
+// }
+
+function openbox()
+{
+	display= document.getElementById("deleteLi").style.display;
+
+	if(display == 'none'){
+		document.getElementById("deleteLi").style.display='block';
+	}else{
+		document.getElementById("deleteLi").style.display='none';
+	}
+}
+
+function closebox()
+{
+	display= document.getElementById("deleteLi").style.display;
+
+	if(display == 'block'){
+		document.getElementById("deleteLi").style.display='none';
+	}else{
+		document.getElementById("deleteLi").style.display='block';
+	}
+}
+
+openbox();
+closebox();	
+
+
+
+
+
+
+
+
+
+
+
+//
+//
+//STVORENNYA NOVUX OBJECTIV
+//
+//
+
+
+/*
+var el = document.createElement("li");
+var ule = document.getElementById("ul");
+// ule.appendChild(el);
+
+ule.insertBefore(el, ule.childNodes[0]);
+
+var litext = document.createTextNode("hello bazar");
+el.appendChild(litext);
+
+ule.removeChild(ule.childNodes[2]);
+*/
+
+// var el = document.createElement("span");
+// document.body.appendChild(el);
+// var z;
+
+// while((z = prompt("Enter item","")) != 0)
+// {
+// 	var lili = document.createElement("li");
+// 	document.getElementById("ul").appendChild(lili);
+// 	var liText = document.createTextNode(z);
+// 	lili.appendChild(liText);
+// }
+
+
+
+
+
+
+
+// var fon = prompt("Enter fon color", "");
+// var txt = prompt("Enter text color", "");
+
+// function col()
+// {
+// 	document.getElementById("clock").style.background = fon;
+// 	document.getElementById("clock").style.color = txt;
+// }
+
+// setTimeout("col()", 2000);
+
+/*
+    
 
     var marginTop = screen.availHeight - 10 - 200;
     var marginSide = screen.availWidth - 10 - 100;
@@ -79,7 +223,7 @@ div{
 	  		el.style.margin =  marginTop + "px 0px";
 	  		circle = 0;
 	  	} 
-	  		
+	  	
 	  	var R = Math.floor(Math.random() * 255);
         var G = Math.floor(Math.random() * 255);
         var B = Math.floor(Math.random() * 255);
@@ -90,10 +234,7 @@ div{
    
     setInterval(cloki,1000);
    
-
-
-
-
+*/
 
 
 // var num = document.getElementsByTagName("div");
@@ -107,11 +248,6 @@ div{
 	
 // 	num[i].style.background="rgb(" + R + "," + G + "," + B +")";
 // }
-
-
-
-
-
 
 
 /*
@@ -664,6 +800,53 @@ text.style.color="green";
 //w(jb);
     
 </script>
+
+
+
+
+<!-- <div id="clock"><b>TEXT IN DIV</b></div>
+<ul id="ul">
+<li>1</li>
+<li>2</li>
+<li>3</li>
+</ul> -->
+
+<!-- <style>
+div{
+	height:100px;
+	width:100px;
+	background:yellow;
+	border:1px solid yellow;
+}
+</style> -->
+
+
+<!-- <a href="#" onclick="openbox('text'); return false">SHOW</a> -->
+
+<!-- <a href="#" onclick="closebox('text'); return false">SHOW</a>. -->
+
+<!-- <div id="text">1</div> -->
+<!-- <div id="text">2</div>
+<div id="text">3</div>
+<div id="text">4</div>
+<div id="text">5</div>
+<div id="text">6</div>
+<div id="text">7</div>
+<div id="text">8</div>
+<div id="text">9</div>
+<div id="test">10</div> -->
+<!-- <div></div> -->
+<!-- <div>
+<ul>
+	<li>first</li>
+	<li>second</li>
+	<li>third</li>
+	<li>fourth</li>
+	<li>fifth</li>
+</ul>
+</div>
+
+ -->
 
 <!-- 
 <div id="test">Test element</div>

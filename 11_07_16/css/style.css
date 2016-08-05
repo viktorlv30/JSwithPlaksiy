@@ -8,3 +8,12 @@
 
 }
 
+#deleteLi{
+	height: 50px;
+	width: 200px;
+	background: red;
+}
+
+#test{
+	display: block;
+}
